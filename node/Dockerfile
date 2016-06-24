@@ -7,10 +7,11 @@ MAINTAINER Mukta Aphale aMukta@gmail.com
 # Install Node.js and other dependencies
 RUN apt-get update && \
     apt-get -y install curl && \
-    curl -sL https://deb.nodesource.com/setup | sudo bash - && \
+    curl -sL https://deb.nodesource.com/setup &&  \
     apt-get -y install python build-essential nodejs
 
 # Install nodemon
+RUN apt-get install -y npm
 RUN npm install -g nodemon
 
 # Provides cached layer for node_modules
